@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import "./styles.css";
+import { SpotList, SpotItem } from "./styles";
 
 interface Spot {
   _id: number;
@@ -30,16 +30,15 @@ const Dashboard = () => {
 
   return (
     <>
-      <ul className="spot-list">
+      <SpotList>
         {spots.map((spot: Spot) => (
-          <li key={spot._id}>
+          <SpotItem key={spot._id}>
             <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }} />
             <strong>{spot.company}</strong>
             <span>{spot.price ? `R$ ${spot.price}/dia` : "Grátis"}</span>
-          </li>
+          </SpotItem>
         ))}
-      </ul>
-
+      </SpotList>
       <Link to="/new">
         <button className="btn">Cadastrar novo spot</button>
       </Link>

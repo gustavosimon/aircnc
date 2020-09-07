@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+import { createGlobalStyle } from "styled-components";
 
-* {
+import backgroundImg from "../assets/background.jpg";
+
+export default createGlobalStyle`
+  * {
   margin: 0;
   padding: 0;
   outline: 0;
@@ -14,7 +17,7 @@ body,
 }
 
 body {
-  background: #000 url("./assets/background.jpg");
+  background: #000 url(${backgroundImg});
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
 }
@@ -92,3 +95,5 @@ button {
 .content button.btn:hover {
   background: #e14f50;
 }
+
+`;

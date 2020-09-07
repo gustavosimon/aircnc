@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import api from "../../services/api";
 
-import "./styles.css";
+import { ThumbnailBox } from "./styles";
 
 const New = () => {
   const history = useHistory();
@@ -35,8 +35,7 @@ const New = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label
-        id="thumbnail"
+      <ThumbnailBox
         style={{ backgroundImage: `url(${preview})` }}
         className={thumbnail ? "has-thumbnail" : ""}
       >
@@ -45,7 +44,7 @@ const New = () => {
           onChange={(event: any) => setThumbnail(event.target.files[0])}
         />
         <img src={camera} alt="Select img" />
-      </label>
+      </ThumbnailBox>
 
       <label htmlFor="company">EMPRESA *</label>
       <input
