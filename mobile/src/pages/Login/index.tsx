@@ -11,7 +11,7 @@ import {
 
 import styles from "./styles";
 
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const Login: React.FC = () => {
   return (
